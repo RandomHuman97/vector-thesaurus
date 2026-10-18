@@ -3,4 +3,4 @@ project(referencebook)
 
 set(CMAKE_CXX_STANDARD 20)
 
-add_executable(referencebook main.cpp)
+add_executable(referencebook src/main.cpp)
