@@ -25,7 +25,7 @@ public:
             memory_info, input_ids.data(), input_ids.size(), shape.data(), shape.size()));
 
         const char* input_names[] = {"input_ids", "attention_mask"};
-        const char* output_names[] = {"sentence_embedding"};
+        const char* output_names[] = {"last_hidden_state"};
 
         // run inference
         auto output_tensors = session.Run(
@@ -43,9 +43,8 @@ public:
 
 int main() {
 
-    const auto lang = "C++";
-    std::cout << "Hello and welcome to " << lang << "!\n";
-
+    auto embeddingEncoder = EmbeddingEncoder("../model.onnx");
+    embeddingEncoder.encode("test");
     for (int i = 1; i <= 5; i++) {
         std::cout << "i = " << i << std::endl;
     }
